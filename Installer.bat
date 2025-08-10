@@ -1,5 +1,6 @@
 @echo off
-
+cd %~dp0
+if not exist 7z.exe curl -L -o 7z.exe https://github.com/Nikita534cool/MikiGDPSInstaller/raw/refs/heads/main/7z.exe
 echo hiii
 
 echo.
@@ -85,4 +86,5 @@ echo done daddy! go play it!
 pause >nul
 
 curl -L -o "MikiGDPS Launcher.lnk" https://github.com/Nikita534cool/MikiGDPSInstaller/raw/refs/heads/main/MikiGDPS%20Launcher.lnk
+
 curl -L -o MikiGDPS.lnk https://github.com/Nikita534cool/MikiGDPSInstaller/raw/refs/heads/main/MikiGDPS.lnk
