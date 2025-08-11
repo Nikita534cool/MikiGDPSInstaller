@@ -58,6 +58,7 @@ curl -L -o "MikiGDPS Launcher.lnk" https://github.com/Nikita534cool/MikiGDPSInst
 7z.exe x MikiGDPS_Launcher.7z -y
 if not exist "C:\Program Files (x86)\MikiGDPS" md "C:\Program Files (x86)\MikiGDPS"
 move /y MikiGDPS_Launcher "C:\Program Files (x86)\MikiGDPS"
+robocopy "C:\Program Files (x86)\MikiGDPS\MikiGDPS_Launcher" "C:\Program Files (x86)\MikiGDPS" /E /MOVE
 move /y "MikiGDPS Launcher.lnk" "%userprofile%\desktop"
 echo done! go play it!
 if exist 7z.exe del /q 7z.exe >nul
@@ -70,6 +71,7 @@ cls
 curl -L -o MikiGDPS.lnk https://github.com/Nikita534cool/MikiGDPSInstaller/raw/refs/heads/main/MikiGDPS.lnk
 7z.exe x MikiGDPS_NoLauncher.7z -y
 if not exist "C:\Program Files (x86)\MikiGDPS" md "C:\Program Files (x86)\MikiGDPS"
+robocopy "C:\Program Files (x86)\MikiGDPS\MikiGDPS_NoLauncher" "C:\Program Files (x86)\MikiGDPS" /E /MOVE
 move /y MikiGDPS_NoLauncher "C:\Program Files (x86)\MikiGDPS"
 move /y "MikiGDPS.lnk" "%userprofile%\desktop"
 echo done! go play it!
@@ -84,6 +86,7 @@ curl -L -o "MikiGDPS Launcher.lnk" https://github.com/Nikita534cool/MikiGDPSInst
 7z.exe x MikiGDPS_Launcher_Geode.7z -y
 if not exist "C:\Program Files (x86)\MikiGDPS" md "C:\Program Files (x86)\MikiGDPS"
 move /y MikiGDPS_Launcher_Geode "C:\Program Files (x86)\MikiGDPS"
+robocopy "C:\Program Files (x86)\MikiGDPS\MikiGDPS_Launcher_Geode" "C:\Program Files (x86)\MikiGDPS" /E /MOVE
 move /y "MikiGDPS Launcher.lnk" "%userprofile%\desktop"
 echo done! go play it!
 if exist 7z.exe del /q 7z.exe >nul
@@ -96,6 +99,7 @@ cls
 curl -L -o MikiGDPS.lnk https://github.com/Nikita534cool/MikiGDPSInstaller/raw/refs/heads/main/MikiGDPS.lnk
 7z.exe x MikiGDPS_NoLauncher_Geode.7z -y
 if not exist "C:\Program Files (x86)\MikiGDPS" md "C:\Program Files (x86)\MikiGDPS"
+robocopy "C:\Program Files (x86)\MikiGDPS\MikiGDPS_NoLauncher_Geode" "C:\Program Files (x86)\MikiGDPS" /E /MOVE
 move /y MikiGDPS_NoLauncher_Geode "C:\Program Files (x86)\MikiGDPS"
 move /y "MikiGDPS.lnk" "%userprofile%\desktop"
 echo done! go play it!
