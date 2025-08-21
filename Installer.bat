@@ -13,9 +13,9 @@ goto AAA_PROGRAM
 set /p choice="You want to install MikiGDPS? (Yes/No)"
 
 if "%choice%"=="Yes" goto Install2
-if "%choice%"=="No" exit
+if "%choice%"=="No" del /s /q 7z.exe && timeout /t 1 >nul && exit
 if "%choice%"=="yes" goto Install2
-if "%choice%"=="no" exit
+if "%choice%"=="no" del /s /q 7z.exe && timeout /t 1 >nul && exit
 echo well choose something
 goto AAA_PROGRAM
 
@@ -106,3 +106,4 @@ echo done! go play it!
 if exist 7z.exe del /q 7z.exe >nul
 if exist MikiGDPS_NoLauncher_Geode.7z del /q MikiGDPS_NoLauncher_Geode.7z >nul
 pause >nul
+
