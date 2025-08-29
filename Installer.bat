@@ -1,12 +1,12 @@
 @echo off
-
+title Wait...
 set "params=%*"
 cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) && fsutil dirty query %systemdrive% 1>nul 2>nul || (  echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && ""%~s0"" %params%", "", "runas", 1 >> "%temp%\getadmin.vbs" && "%temp%\getadmin.vbs" && exit /B )
 
 cd %~dp0
 
 if not exist 7z.exe curl -L -o 7z.exe https://github.com/Nikita534cool/MikiGDPSInstaller/raw/refs/heads/main/7z.exe && cls
-
+title MikiGDPS Installer!
 goto AAA_PROGRAM
 
 :AAA_PROGRAM
@@ -18,7 +18,6 @@ if "%choice%"=="yes" goto Install2
 if "%choice%"=="no" del /s /q 7z.exe && timeout /t 1 >nul && exit
 echo well choose something
 goto AAA_PROGRAM
-
 
 :Install2
 set /p choice="You want to install Geode (its mods installer so you can get mods) (Yes/No) "
@@ -52,13 +51,14 @@ echo well choose something
 goto Install3
 
 :bru
+title Instaling... (wait)
 curl -L -o MikiGDPS_Launcher.7z https://github.com/Nikita534cool/MikiGDPSInstaller/raw/refs/heads/main/MikiGDPS_Launcher.7z
 cls
 curl -L -o "MikiGDPS Launcher.lnk" https://github.com/Nikita534cool/MikiGDPSInstaller/raw/refs/heads/main/MikiGDPS%20Launcher.lnk
 7z.exe x MikiGDPS_Launcher.7z -y
-if not exist "C:\Program Files (x86)\MikiGDPS" md "C:\Program Files (x86)\MikiGDPS"
-move /y MikiGDPS_Launcher "C:\Program Files (x86)\MikiGDPS"
-robocopy "C:\Program Files (x86)\MikiGDPS\MikiGDPS_Launcher" "C:\Program Files (x86)\MikiGDPS" /E /MOVE
+if exist "C:\Program Files (x86)\MikiGDPS" rd /s /q "C:\Program Files (x86)\MikiGDPS"
+ren MikiGDPS_Launcher MikiGDPS
+move /y MikiGDPS "C:\Program Files (x86)\MikiGDPS"
 move /y "MikiGDPS Launcher.lnk" "%userprofile%\desktop"
 echo done! go play it!
 if exist 7z.exe del /q 7z.exe >nul
@@ -66,13 +66,14 @@ if exist MikiGDPS_Launcher.7z del /q MikiGDPS_Launcher.7z >nul
 pause >nul
 
 :yey
+title Instaling... (wait)
 curl -L -o MikiGDPS_NoLauncher.7z https://github.com/Nikita534cool/MikiGDPSInstaller/raw/refs/heads/main/MikiGDPS_NoLauncher.7z
 cls
 curl -L -o MikiGDPS.lnk https://github.com/Nikita534cool/MikiGDPSInstaller/raw/refs/heads/main/MikiGDPS.lnk
 7z.exe x MikiGDPS_NoLauncher.7z -y
-if not exist "C:\Program Files (x86)\MikiGDPS" md "C:\Program Files (x86)\MikiGDPS"
-robocopy "C:\Program Files (x86)\MikiGDPS\MikiGDPS_NoLauncher" "C:\Program Files (x86)\MikiGDPS" /E /MOVE
-move /y MikiGDPS_NoLauncher "C:\Program Files (x86)\MikiGDPS"
+if exist "C:\Program Files (x86)\MikiGDPS" rd /s /q "C:\Program Files (x86)\MikiGDPS"
+ren MikiGDPS_NoLauncher MikiGDPS
+move /y MikiGDPS "C:\Program Files (x86)\MikiGDPS"
 move /y "MikiGDPS.lnk" "%userprofile%\desktop"
 echo done! go play it!
 if exist 7z.exe del /q 7z.exe >nul
@@ -80,13 +81,14 @@ if exist MikiGDPS_NoLauncher.7z del /q MikiGDPS_NoLauncher.7z >nul
 pause >nul
 
 :bruu
+title Instaling... (wait)
 curl -L -o MikiGDPS_Launcher_Geode.7z https://github.com/Nikita534cool/MikiGDPSInstaller/raw/refs/heads/main/MikiGDPS_Launcher_Geode.7z
 cls
 curl -L -o "MikiGDPS Launcher.lnk" https://github.com/Nikita534cool/MikiGDPSInstaller/raw/refs/heads/main/MikiGDPS%20Launcher.lnk >nul
 7z.exe x MikiGDPS_Launcher_Geode.7z -y
-if not exist "C:\Program Files (x86)\MikiGDPS" md "C:\Program Files (x86)\MikiGDPS"
-move /y MikiGDPS_Launcher_Geode "C:\Program Files (x86)\MikiGDPS"
-robocopy "C:\Program Files (x86)\MikiGDPS\MikiGDPS_Launcher_Geode" "C:\Program Files (x86)\MikiGDPS" /E /MOVE
+if exist "C:\Program Files (x86)\MikiGDPS" rd /s /q "C:\Program Files (x86)\MikiGDPS"
+ren MikiGDPS_Launcher_Geode MikiGDPS
+move /y MikiGDPS "C:\Program Files (x86)\MikiGDPS"
 move /y "MikiGDPS Launcher.lnk" "%userprofile%\desktop"
 echo done! go play it!
 if exist 7z.exe del /q 7z.exe >nul
@@ -94,16 +96,16 @@ if exist MikiGDPS_Launcher_Geode.7z del /q MikiGDPS_Launcher_Geode.7z >nul
 pause >nul
 
 :yeyy
+title Instaling... (wait)
 curl -L -o MikiGDPS_NoLauncher_Geode.7z https://github.com/Nikita534cool/MikiGDPSInstaller/raw/refs/heads/main/MikiGDPS_NoLauncher_Geode.7z
 cls
 curl -L -o MikiGDPS.lnk https://github.com/Nikita534cool/MikiGDPSInstaller/raw/refs/heads/main/MikiGDPS.lnk
 7z.exe x MikiGDPS_NoLauncher_Geode.7z -y
-if not exist "C:\Program Files (x86)\MikiGDPS" md "C:\Program Files (x86)\MikiGDPS"
-robocopy "C:\Program Files (x86)\MikiGDPS\MikiGDPS_NoLauncher_Geode" "C:\Program Files (x86)\MikiGDPS" /E /MOVE
-move /y MikiGDPS_NoLauncher_Geode "C:\Program Files (x86)\MikiGDPS"
+if exist "C:\Program Files (x86)\MikiGDPS" rd /s /q "C:\Program Files (x86)\MikiGDPS"
+ren MikiGDPS_NoLauncher_Geode MikiGDPS
+move /y MikiGDPS "C:\Program Files (x86)\MikiGDPS"
 move /y "MikiGDPS.lnk" "%userprofile%\desktop"
 echo done! go play it!
 if exist 7z.exe del /q 7z.exe >nul
 if exist MikiGDPS_NoLauncher_Geode.7z del /q MikiGDPS_NoLauncher_Geode.7z >nul
 pause >nul
-
